@@ -82,10 +82,10 @@ export default function Home() {
               <input id={"exchange_input"} value={calculateExchangedAmount(inputA, selectedCountry)} onChange={handleInputBChange}/>
           </div>
           <div id={"exchange_rate_container"}>
-              <div id={"refresh_exchange_rate"} onClick={event => refreshExchangeRate()}>
-                  <img id={"refresh_icon"} src={"refresh.png"}/>
-                  Refresh exchange rate
-              </div>
+              {/*<div id={"refresh_exchange_rate"} onClick={event => refreshExchangeRate()}>*/}
+              {/*    <img id={"refresh_icon"} src={"refresh.png"}/>*/}
+              {/*    Refresh exchange rate*/}
+              {/*</div>*/}
               <div id={"exchange_rate_text"}>
                   <b>Rate</b> {showCurrency(selectedCountry)} {selectedCountry.currencyUnit.split('(')[0]} = {calculateExchangeRate(selectedCountry)} KRW
               </div>
