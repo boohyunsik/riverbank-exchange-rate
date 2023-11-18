@@ -96,7 +96,7 @@ export default function Home() {
           {
               prices.map((price) => {
                   return (
-                      <div key={price.id} id={"price_component"}>{`${price.icon} ${price.price.toLocaleString('kr-KR')}`}</div>
+                      <div key={price.id} id={"price_component"}>{`${price.icon} ₩ ${price.price.toLocaleString('kr-KR')}`}</div>
                   )
               })
           }
