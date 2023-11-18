@@ -10,13 +10,11 @@ export default function Home() {
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
   useEffect(() => {
       getExchangeRate().then((r) => {
-          console.log(`set exchange rate`, r);
           setExchangeRates(r);
       })
   }, [])
 
   const handleInputAChange = ((e: FormEvent<HTMLInputElement>) => {
-      console.log(`value`, e.currentTarget.value);
       setInputA(e.currentTarget.value);
   })
 
