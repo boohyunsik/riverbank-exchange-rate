@@ -2,6 +2,7 @@
 import {FormEvent, useEffect, useState} from "react";
 import {ExchangeRate, getExchangeRate} from "@/app/data/getExchangeRate";
 import {countries, Country, prices} from "@/app/data/constants";
+import {Flag} from "@/app/component/flag";
 
 export default function Home() {
   const [inputA, setInputA] = useState(`0`);
@@ -23,11 +24,13 @@ export default function Home() {
   })
 
   const onClickCountry = (country: Country) => {
+      console.log(`onClickCountry: ${country}`);
       setSelectedCountry(country);
   }
 
   const showCurrency = (country: Country) => {
-      if (country.currencyUnit.endsWith('100)')) {
+      console.log(`showCurrency`, country);
+      if (country.divideUnit == 100) {
           return '100';
       }
 
@@ -35,26 +38,18 @@ export default function Home() {
   }
 
   const calculateExchangeRate = (country: Country) => {
-      const find = exchangeRates.find((item) => item.currencyUnit === country.currencyUnit);
+      console.log(`calculateExchangeRate`, country);
+      const find = exchangeRates.find((item) => item.currencyUnit === country.originalCurrencyUnit);
       if (find == null) {
           return '0';
       }
       return find.sendingRate;
   }
 
-  const refreshExchangeRate = () => {
-      getExchangeRate().then((r) => {
-          console.log(`set exchange rate`, r);
-          setExchangeRates(r);
-      })
-  }
-
   const calculateExchangedAmount = (input: string, country: Country) => {
       const rate = calculateExchangeRate(country).replace(',', '');
       let result = (parseFloat(input) * parseFloat(rate))
-      if (country.currencyUnit.endsWith('100)')) {
-         result = result / 100;
-      }
+      result = result / country.divideUnit;
       return result.toFixed(2);
   }
 
@@ -66,7 +61,11 @@ export default function Home() {
               {
                   countries.map((country) => {
                       return (
-                          <img key={country.id} id={"country_img"} src={country.img} onClick={event => onClickCountry(country)} />
+                          <Flag key={country.id}
+                                id={"country_img"}
+                                src={country.img}
+                                name={country.currencyUnit}
+                                onClick={event => onClickCountry(country)} />
                       )
                   })
               }
@@ -74,10 +73,12 @@ export default function Home() {
           <div id={"exchange_input_container"}>
               <img id={"country_img"} src={selectedCountry.img}/>
               <input id={"exchange_input"} type={"number"} value={inputA} onChange={handleInputAChange}/>
+              <div><b>{ selectedCountry.currencyUnit }</b></div>
           </div>
           <div id={"exchange_input_container"}>
               <img id={"country_img"} src={"korea.png"}/>
               <input id={"exchange_input"} value={calculateExchangedAmount(inputA, selectedCountry)} onChange={handleInputBChange}/>
+              <div><b>KRW</b></div>
           </div>
           <div id={"exchange_rate_container"}>
               {/*<div id={"refresh_exchange_rate"} onClick={event => refreshExchangeRate()}>*/}

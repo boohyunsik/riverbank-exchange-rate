@@ -2,6 +2,8 @@ export interface Country {
     id: string;
     img: string;
     currencyUnit: string;
+    originalCurrencyUnit: string;
+    divideUnit: number;
 }
 
 export const countries: Country[] = [
@@ -9,16 +11,22 @@ export const countries: Country[] = [
         id: 'US',
         img: 'us.png',
         currencyUnit: 'USD',
+        originalCurrencyUnit: 'USD',
+        divideUnit: 1,
     },
     {
         id: 'CHINA',
         img: 'china.png',
-        currencyUnit: 'CNH'
+        currencyUnit: 'CNH',
+        originalCurrencyUnit: 'CHN',
+        divideUnit: 1,
     },
     {
         id: 'JAPAN',
         img: 'japan.png',
-        currencyUnit: 'JPY(100)'
+        currencyUnit: 'JPY',
+        originalCurrencyUnit: 'JPY(100)',
+        divideUnit: 100,
     },
     // {
     //     id: 'VIETNAM',
@@ -28,22 +36,30 @@ export const countries: Country[] = [
     {
         id: 'THAILAND',
         img: 'thailand.png',
-        currencyUnit: 'THB'
+        currencyUnit: 'THB',
+        originalCurrencyUnit: 'THB',
+        divideUnit: 1,
     },
     {
         id: 'EU',
         img: 'eu.png',
-        currencyUnit: 'EUR'
+        currencyUnit: 'EUR',
+        originalCurrencyUnit: 'EUR',
+        divideUnit: 1,
     },
     {
         id: 'INDONESIA',
         img: 'indonesia.png',
-        currencyUnit: 'IDR(100)'
+        currencyUnit: 'IDR',
+        originalCurrencyUnit: 'IDR(100)',
+        divideUnit: 100,
     },
     {
         id: 'SINGAPORE',
         img: 'singapore.png',
-        currencyUnit: 'SGD'
+        currencyUnit: 'SGD',
+        originalCurrencyUnit: 'SGD',
+        divideUnit: 1,
     }
     // {
     //     id: 'TAIWAN',
