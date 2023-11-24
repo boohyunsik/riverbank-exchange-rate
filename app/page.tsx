@@ -55,7 +55,9 @@ export default function Home() {
 
   return (
     <div id={"container"}>
-      <div id={"title"}>Korean exchange rate</div>
+      <div id={"logo_container"}>
+          <div id={"title"}>Korean exchange rate</div>
+      </div>
       <div id={"main_container"}>
           <div id={"country_container"}>
               {
@@ -99,6 +101,9 @@ export default function Home() {
                   )
               })
           }
+      </div>
+      <div>
+          <img id={"logo"} src={"riverbank_logo_color.png"}/>
       </div>
 
     </div>
