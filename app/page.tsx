@@ -19,7 +19,6 @@ export default function Home() {
   const handleInputAChange = ((e: FormEvent<HTMLInputElement>) => {
       setInputA(e.currentTarget.value);
       if (e.currentTarget.value.trim() === '') {
-          console.log(`empty`)
           setInputB('0.00');
       }
   })

@@ -15,6 +15,5 @@ export const getExchangeRate = async (): Promise<ExchangeRate[]> => {
             krwStandard: item.krwStandard
         }
     });
-    console.log(`result`, result);
     return result;
 }
