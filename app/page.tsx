@@ -88,12 +88,12 @@ export default function Home() {
           </div>
           <div id={"exchange_input_container"}>
               <img id={"country_img"} src={selectedCountry.img} alt={selectedCountry.img}/>
-              <input id={"exchange_input"} type={"number"} value={inputA} onChange={handleInputAChange}/>
+              <input id={"exchange_input_upper"} type={"number"} value={inputA} onChange={handleInputAChange} aria-label={"Foreign-Currency"}/>
               <div><b>{ selectedCountry.currencyUnit }</b></div>
           </div>
           <div id={"exchange_input_container"}>
               <img id={"country_img"} src={"korea.png"} alt={"korea.png"}/>
-              <input id={"exchange_input"} value={calculateExchangedAmount(inputA, selectedCountry)} onChange={handleInputBChange}/>
+              <input id={"exchange_input_bound"} value={calculateExchangedAmount(inputA, selectedCountry)} onChange={handleInputBChange} aria-label={"KRW"}/>
               <div><b>KRW</b></div>
           </div>
           <div id={"exchange_rate_container"}>
@@ -117,7 +117,7 @@ export default function Home() {
           }
       </div>
       <div>
-          <img id={"logo"} src={"riverbank_logo_color.png"}/>
+          <img id={"logo"} src={"riverbank_logo_color.png"} alt={'riverbank_logo_color.png'}/>
       </div>
 
     </div>
