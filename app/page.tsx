@@ -87,12 +87,12 @@ export default function Home() {
               }
           </div>
           <div id={"exchange_input_container"}>
-              <img id={"country_img"} src={selectedCountry.img}/>
+              <img id={"country_img"} src={selectedCountry.img} alt={selectedCountry.img}/>
               <input id={"exchange_input"} type={"number"} value={inputA} onChange={handleInputAChange}/>
               <div><b>{ selectedCountry.currencyUnit }</b></div>
           </div>
           <div id={"exchange_input_container"}>
-              <img id={"country_img"} src={"korea.png"}/>
+              <img id={"country_img"} src={"korea.png"} alt={"korea.png"}/>
               <input id={"exchange_input"} value={calculateExchangedAmount(inputA, selectedCountry)} onChange={handleInputBChange}/>
               <div><b>KRW</b></div>
           </div>
