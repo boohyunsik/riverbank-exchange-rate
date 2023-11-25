@@ -18,6 +18,10 @@ export default function Home() {
 
   const handleInputAChange = ((e: FormEvent<HTMLInputElement>) => {
       setInputA(e.currentTarget.value);
+      if (e.currentTarget.value.trim() === '') {
+          console.log(`empty`)
+          setInputB('0.00');
+      }
   })
 
   const handleInputBChange = ((e: FormEvent<HTMLInputElement>) => {
@@ -25,12 +29,10 @@ export default function Home() {
   })
 
   const onClickCountry = (country: Country) => {
-      console.log(`onClickCountry: ${country}`);
       setSelectedCountry(country);
   }
 
   const showCurrency = (country: Country) => {
-      console.log(`showCurrency`, country);
       if (country.divideUnit == 100) {
           return '100';
       }
@@ -39,15 +41,17 @@ export default function Home() {
   }
 
   const calculateExchangeRate = (country: Country) => {
-      console.log(`calculateExchangeRate`, country);
-      const find = exchangeRates.find((item) => item.currencyUnit === country.originalCurrencyUnit);
-      if (find == null) {
+      const find = exchangeRates.find((item) => item.currency === country.currencyUnit);
+      if (!find) {
           return '0';
       }
-      return find.sendingRate;
+      return (find.krwStandard / find.value).toFixed(2);
   }
 
   const calculateExchangedAmount = (input: string, country: Country) => {
+      if (input.trim() === '') {
+          return '0.00';
+      }
       const rate = calculateExchangeRate(country).replace(',', '');
       let result = (parseFloat(input) * parseFloat(rate))
       result = result / country.divideUnit;

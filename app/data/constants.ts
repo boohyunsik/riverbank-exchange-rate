@@ -17,8 +17,8 @@ export const countries: Country[] = [
     {
         id: 'CHINA',
         img: 'china.png',
-        currencyUnit: 'CNH',
-        originalCurrencyUnit: 'CHN',
+        currencyUnit: 'CNY',
+        originalCurrencyUnit: 'CNY',
         divideUnit: 1,
     },
     {
@@ -28,11 +28,13 @@ export const countries: Country[] = [
         originalCurrencyUnit: 'JPY(100)',
         divideUnit: 100,
     },
-    // {
-    //     id: 'VIETNAM',
-    //     img: 'vietnam.png',
-    //     currencyUnit: ''
-    // },
+    {
+        id: 'VIETNAM',
+        img: 'vietnam.png',
+        currencyUnit: 'VND',
+        originalCurrencyUnit: 'VND',
+        divideUnit: 1,
+    },
     {
         id: 'THAILAND',
         img: 'thailand.png',
@@ -60,12 +62,42 @@ export const countries: Country[] = [
         currencyUnit: 'SGD',
         originalCurrencyUnit: 'SGD',
         divideUnit: 1,
+    },
+    {
+        id: 'TAIWAN',
+        img: 'taiwan.png',
+        currencyUnit: 'TWD',
+        originalCurrencyUnit: 'TWD',
+        divideUnit: 1,
+    },
+    {
+        id: 'PHILIPPINES',
+        img: 'philippines.png',
+        currencyUnit: 'PHP',
+        originalCurrencyUnit: 'PHP',
+        divideUnit: 1,
+    },
+    {
+        id: 'MALAYSIA',
+        img: 'malaysia.png',
+        currencyUnit: 'MYR',
+        originalCurrencyUnit: 'MYR',
+        divideUnit: 1
+    },
+    {
+        id: 'HONGKONG',
+        img: 'hongkong.png',
+        currencyUnit: 'HKD',
+        originalCurrencyUnit: 'HKD',
+        divideUnit: 1,
+    },
+    {
+        id: 'RUSSIA',
+        img: 'russia.png',
+        currencyUnit: 'RUB',
+        originalCurrencyUnit: 'RUB',
+        divideUnit: 1,
     }
-    // {
-    //     id: 'TAIWAN',
-    //     img: 'taiwan.png',
-    //     currencyUnit: ''
-    // }
 ];
 
 export interface Price {
