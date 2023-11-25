@@ -3,6 +3,7 @@ import {FormEvent, useEffect, useState} from "react";
 import {ExchangeRate, getExchangeRate} from "@/app/data/getExchangeRate";
 import {countries, Country, prices} from "@/app/data/constants";
 import {Flag} from "@/app/component/flag";
+import Script from "next/script";
 
 export default function Home() {
   const [inputA, setInputA] = useState(`0`);
@@ -55,6 +56,16 @@ export default function Home() {
 
   return (
     <div id={"container"}>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-QQHRRJX8TE"></Script>
+      <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-QQHRRJX8TE');   
+          `}
+      </Script>
       <div id={"logo_container"}>
           <div id={"title"}>Korean exchange rate</div>
       </div>
