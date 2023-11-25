@@ -70,7 +70,7 @@ export default function Home() {
           `}
       </Script>
       <div id={"logo_container"}>
-          <div id={"title"}>Korean exchange rate</div>
+          <h1 id={"title"}>KRW exchange rate</h1>
       </div>
       <div id={"main_container"}>
           <div id={"country_container"}>
