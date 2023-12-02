@@ -6,6 +6,8 @@ import {Flag} from "@/app/component/flag";
 import Script from "next/script";
 
 export default function Home() {
+  // true = change foreign currency, false = change krw
+  const [inputMode, setInputMode] = useState(true);
   const [inputA, setInputA] = useState(`0`);
   const [inputB, setInputB] = useState(`0`);
   const [exchangeRates, setExchangeRates] = useState<ExchangeRate[]>([]);
@@ -18,12 +20,13 @@ export default function Home() {
 
   const handleInputAChange = ((e: FormEvent<HTMLInputElement>) => {
       setInputA(e.currentTarget.value);
-      if (e.currentTarget.value.trim() === '') {
+      if (inputMode && e.currentTarget.value.trim() === '') {
           setInputB('0.00');
       }
   })
 
   const handleInputBChange = ((e: FormEvent<HTMLInputElement>) => {
+      console.log('inputMode: ', inputMode);
       setInputB(e.currentTarget.value);
   })
 
@@ -47,13 +50,22 @@ export default function Home() {
       return (find.krwStandard / find.value).toFixed(2);
   }
 
-  const calculateExchangedAmount = (input: string, country: Country) => {
+  const calculateForeignExchangedAmount = (input: string, country: Country) => {
       if (input.trim() === '') {
           return '0.00';
       }
       const rate = calculateExchangeRate(country).replace(',', '');
       let result = (parseFloat(input) * parseFloat(rate))
       result = result / country.divideUnit;
+      return result.toFixed(2);
+  }
+
+  const calculateKrwExchangeAmount = (input: string, country: Country) => {
+      if (input.trim() === '') {
+          return '0.00';
+      }
+      const rate = calculateExchangeRate(country);
+      let result = (parseFloat(input) * (1 / parseFloat(rate)));
       return result.toFixed(2);
   }
 
@@ -88,19 +100,26 @@ export default function Home() {
           </div>
           <div id={"exchange_input_container"}>
               <img id={"country_img"} src={selectedCountry.img} alt={selectedCountry.img}/>
-              <input id={"exchange_input_upper"} type={"number"} value={inputA} onChange={handleInputAChange} aria-label={"Foreign-Currency"}/>
+              <input id={"exchange_input_upper"}
+                     type={"number"}
+                     value={inputMode ? inputA : calculateKrwExchangeAmount(inputB, selectedCountry)}
+                     onChange={handleInputAChange}
+                     onFocus={() => setInputMode(true)}
+                     onClick={() => setInputMode(true)}
+                     aria-label={"Foreign-Currency"}/>
               <div><b>{ selectedCountry.currencyUnit }</b></div>
           </div>
           <div id={"exchange_input_container"}>
               <img id={"country_img"} src={"korea.png"} alt={"korea.png"}/>
-              <input id={"exchange_input_bound"} value={calculateExchangedAmount(inputA, selectedCountry)} onChange={handleInputBChange} aria-label={"KRW"}/>
+              <input id={"exchange_input_bound"}
+                     value={inputMode ? calculateForeignExchangedAmount(inputA, selectedCountry) : inputB}
+                     onChange={handleInputBChange}
+                     onFocus={() => setInputMode(false)}
+                     onClick={() => {setInputMode(false)}}
+                     aria-label={"KRW"}/>
               <div><b>KRW</b></div>
           </div>
           <div id={"exchange_rate_container"}>
-              {/*<div id={"refresh_exchange_rate"} onClick={event => refreshExchangeRate()}>*/}
-              {/*    <img id={"refresh_icon"} src={"refresh.png"}/>*/}
-              {/*    Refresh exchange rate*/}
-              {/*</div>*/}
               <div id={"exchange_rate_text"}>
                   <b>Rate</b> {showCurrency(selectedCountry)} {selectedCountry.currencyUnit.split('(')[0]} = {calculateExchangeRate(selectedCountry)} KRW
               </div>
