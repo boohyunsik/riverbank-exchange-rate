@@ -1,144 +1,49 @@
 "use client";
-import {FormEvent, useEffect, useState} from "react";
-import {ExchangeRate, getExchangeRate} from "@/app/data/getExchangeRate";
-import {countries, Country, prices} from "@/app/data/constants";
-import {Flag} from "@/app/component/flag";
+import React, {FormEvent, ReactElement, useEffect, useState} from "react";
 import Script from "next/script";
+import ExchangeRate from "@/app/pages/exchageRate";
+import ExchangeMap from "@/app/pages/exchangeMap";
+import {Wrapper} from "@googlemaps/react-wrapper/src";
+import {Status} from "@googlemaps/react-wrapper";
 
 export default function Home() {
-  // true = change foreign currency, false = change krw
-  const [inputMode, setInputMode] = useState(true);
-  const [inputA, setInputA] = useState(`0`);
-  const [inputB, setInputB] = useState(`0`);
-  const [exchangeRates, setExchangeRates] = useState<ExchangeRate[]>([]);
-  const [selectedCountry, setSelectedCountry] = useState(countries[0]);
-  useEffect(() => {
-      getExchangeRate().then((r) => {
-          setExchangeRates(r);
-      })
-  }, [])
-
-  const handleInputAChange = ((e: FormEvent<HTMLInputElement>) => {
-      setInputA(e.currentTarget.value);
-      if (inputMode && e.currentTarget.value.trim() === '') {
-          setInputB('0.00');
-      }
-  })
-
-  const handleInputBChange = ((e: FormEvent<HTMLInputElement>) => {
-      console.log('inputMode: ', inputMode);
-      setInputB(e.currentTarget.value);
-  })
-
-  const onClickCountry = (country: Country) => {
-      setSelectedCountry(country);
+  const [menu, setMenu] = useState(0);
+  const onClickMenu = (item: number) => {
+      setMenu(item);
   }
 
-  const showCurrency = (country: Country) => {
-      if (country.divideUnit == 100) {
-          return '100';
-      }
-
-      return '1';
-  }
-
-  const calculateExchangeRate = (country: Country) => {
-      const find = exchangeRates.find((item) => item.currency === country.currencyUnit);
-      if (!find) {
-          return '0';
-      }
-      return (find.krwStandard / find.value).toFixed(2);
-  }
-
-  const calculateForeignExchangedAmount = (input: string, country: Country) => {
-      if (input.trim() === '') {
-          return '0.00';
-      }
-      const rate = calculateExchangeRate(country).replace(',', '');
-      let result = (parseFloat(input) * parseFloat(rate))
-      result = result / country.divideUnit;
-      return result.toFixed(2);
-  }
-
-  const calculateKrwExchangeAmount = (input: string, country: Country) => {
-      if (input.trim() === '') {
-          return '0.00';
-      }
-      const rate = calculateExchangeRate(country);
-      let result = (parseFloat(input) * (1 / parseFloat(rate)));
-      return result.toFixed(2);
+  const render = (status: Status): ReactElement => {
+      if (status === Status.FAILURE) return <div>Error!</div>
+      return <div>Loading...</div>
   }
 
   return (
-    <div id={"container"}>
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-QQHRRJX8TE"></Script>
-      <Script id="google-analytics">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+        <div>
+            <Script async src="https://www.googletagmanager.com/gtag/js?id=G-QQHRRJX8TE"></Script>
+            <Script id="google-analytics">
+                {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-            gtag('config', 'G-QQHRRJX8TE');   
-          `}
-      </Script>
-      <div id={"logo_container"}>
-          <h1 id={"title"}>KRW exchange rate</h1>
-      </div>
-      <div id={"main_container"}>
-          <div id={"country_container"}>
-              {
-                  countries.map((country) => {
-                      return (
-                          <Flag key={country.id}
-                                id={"country_img"}
-                                src={country.img}
-                                name={country.currencyUnit}
-                                onClick={event => onClickCountry(country)} />
-                      )
-                  })
-              }
-          </div>
-          <div id={"exchange_input_container"}>
-              <img id={"country_img"} src={selectedCountry.img} alt={selectedCountry.img}/>
-              <input id={"exchange_input_upper"}
-                     type={"number"}
-                     value={inputMode ? inputA : calculateKrwExchangeAmount(inputB, selectedCountry)}
-                     onChange={handleInputAChange}
-                     onFocus={() => setInputMode(true)}
-                     onClick={() => setInputMode(true)}
-                     aria-label={"Foreign-Currency"}/>
-              <div><b>{ selectedCountry.currencyUnit }</b></div>
-          </div>
-          <div id={"exchange_input_container"}>
-              <img id={"country_img"} src={"korea.png"} alt={"korea.png"}/>
-              <input id={"exchange_input_bound"}
-                     value={inputMode ? calculateForeignExchangedAmount(inputA, selectedCountry) : inputB}
-                     onChange={handleInputBChange}
-                     onFocus={() => setInputMode(false)}
-                     onClick={() => {setInputMode(false)}}
-                     aria-label={"KRW"}/>
-              <div><b>KRW</b></div>
-          </div>
-          <div id={"exchange_rate_container"}>
-              <div id={"exchange_rate_text"}>
-                  <b>Rate</b> {showCurrency(selectedCountry)} {selectedCountry.currencyUnit.split('(')[0]} = {calculateExchangeRate(selectedCountry)} KRW
-              </div>
-          </div>
-      </div>
-      <div id={"price_title"}>Price in Korea</div>
-      <div id={"price_container"}>
-          {
-              prices.map((price) => {
-                  return (
-                      <div key={price.id} id={"price_component"}>{`${price.icon} ₩ ${price.price.toLocaleString('kr-KR')}`}</div>
-                  )
-              })
-          }
-      </div>
-      <div>
-          <img id={"logo"} src={"riverbank_logo_color.png"} alt={'riverbank_logo_color.png'}/>
-      </div>
-
-    </div>
+          gtag('config', 'G-QQHRRJX8TE');   
+        `}
+            </Script>
+            <div className="fixed top-0 w-96">
+                <div className="flex justify-between items-center">
+                    <div>
+                        <img className="w-32" src="riverbank_logo_color.png" alt="riverbank_logo_color.png"/>
+                    </div>
+                    <div className="flex flex-row">
+                        <div className="cursor-pointer" onClick={(e) => onClickMenu(0)}>Exchange rate</div>
+                        <div className="w-4"></div>
+                        <div className="cursor-pointer" onClick={(e) => onClickMenu(1)}>Location</div>
+                    </div>
+                </div>
+            </div>
+            {
+                menu == 0 ? <ExchangeRate /> : <ExchangeMap />
+            }
+        </div>
   )
 }
