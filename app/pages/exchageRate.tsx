@@ -70,7 +70,7 @@ export default function ExchangeRate() {
     }
 
     return (
-        <div id={"container"} className="w-96">
+        <div id={"container"} className="w-full sm:w-96">
             <Script async src="https://www.googletagmanager.com/gtag/js?id=G-QQHRRJX8TE"></Script>
             <Script id="google-analytics">
                 {`

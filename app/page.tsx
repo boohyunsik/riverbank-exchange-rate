@@ -29,10 +29,10 @@ export default function Home() {
           gtag('config', 'G-QQHRRJX8TE');   
         `}
             </Script>
-            <div className="fixed top-0 w-96">
-                <div className="flex justify-between items-center">
+            <div className="fixed left-0 top-0 w-full sm:w-96">
+                <div className="flex w-full justify-between items-center">
                     <div>
-                        <img className="w-32" src="riverbank_logo_color.png" alt="riverbank_logo_color.png"/>
+                        <img className="w-28 sm:w-32" src="riverbank_logo_color.png" alt="riverbank_logo_color.png"/>
                     </div>
                     <div className="flex flex-row">
                         <div className="cursor-pointer" onClick={(e) => onClickMenu(0)}>Exchange rate</div>
@@ -41,9 +41,11 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            {
-                menu == 0 ? <ExchangeRate /> : <ExchangeMap />
-            }
+            <div className="w-full sm:w-96">
+                {
+                    menu == 0 ? <ExchangeRate /> : <ExchangeMap />
+                }
+            </div>
         </div>
   )
 }
