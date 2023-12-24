@@ -1,5 +1,5 @@
 "use client";
-import {FormEvent, useEffect, useState} from "react";
+import React, {FormEvent, useEffect, useState} from "react";
 import {ExchangeRate, getExchangeRate} from "@/app/data/getExchangeRate";
 import {countries, Country, prices} from "@/app/data/constants";
 import {Flag} from "@/app/component/flag";
@@ -71,6 +71,7 @@ export default function ExchangeRate() {
 
     return (
         <div id={"container"} className="w-full sm:w-96">
+            <meta name="description" content="Find korean exchange rate." />
             <Script async src="https://www.googletagmanager.com/gtag/js?id=G-QQHRRJX8TE"></Script>
             <Script id="google-analytics">
                 {`
