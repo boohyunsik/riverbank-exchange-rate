@@ -6,7 +6,7 @@ import React from "react";
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Korean exchange rate',
+  title: 'Riverbank - Korean exchange rate, Korean exchange location',
 }
 
 export default function RootLayout({
