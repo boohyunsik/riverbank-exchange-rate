@@ -44,6 +44,7 @@ export default function ExchangeMap() {
     return (
         <div id={"container"} className={"w-96 h-full"}>
             <meta name="description" content="Find korean exchange market location." />
+            <h1 id={"title"}>KRW exchange market location</h1>
             <div id={"map"} className={"w-full h-96"}/>
         </div>
     )
