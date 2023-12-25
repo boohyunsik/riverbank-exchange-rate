@@ -12,22 +12,26 @@ export default function Home() {
       setMenu(item);
   }
 
-  const render = (status: Status): ReactElement => {
-      if (status === Status.FAILURE) return <div>Error!</div>
-      return <div>Loading...</div>
-  }
-
   return (
         <div>
             <Script async src="https://www.googletagmanager.com/gtag/js?id=G-QQHRRJX8TE"></Script>
             <Script id="google-analytics">
                 {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-QQHRRJX8TE');   
-        `}
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'G-QQHRRJX8TE');   
+                `}
+            </Script>
+            <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-11456870796">
+            </Script>
+            <Script>
+                {`
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'AW-11456870796');
+                `}
             </Script>
             <div className="fixed xs:left-0 top-0 w-full w-80 sm:w-96">
                 <div className="flex w-full justify-between items-center">
