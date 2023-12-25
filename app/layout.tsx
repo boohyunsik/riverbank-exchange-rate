@@ -20,7 +20,7 @@ export default function RootLayout({
       <meta property="og:title" content="Riverbank - KRW Exchange rate & location" />
       <meta property="og:description" content="Check KRW exchange rate easily for traveling Korea!" />
       <meta name="description" content="Check KRW exchange rate easily for traveling Korea!" />
-      <meta property="og:url" content="https://exchange.riverbank.world" />
+      <meta property="og:url" content="https://www.riverbank.world" />
       <meta property="og:locale" content="en_US" />
       <meta property="og:locale" content="ko_KR" />
       <meta property="og:locale" content="vi_VN" />

@@ -71,6 +71,7 @@ export default function Rate() {
 
     return (
         <div id={"container"} className="w-full sm:w-96">
+            <meta name="description" content="Find korean exchange market location." />
             <meta name="description" content="Find korean exchange rate." />
             <Script async src="https://www.googletagmanager.com/gtag/js?id=G-QQHRRJX8TE"></Script>
             <Script id="google-analytics">

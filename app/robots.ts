@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://exchange.riverbank.world/sitemap.xml',
-        host: 'https://exchange.riverbank.world'
+        sitemap: 'https://www.riverbank.world/sitemap.xml',
+        host: 'https://www.riverbank.world'
     }
 }
