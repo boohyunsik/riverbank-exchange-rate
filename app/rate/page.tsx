@@ -86,6 +86,9 @@ export default function Rate() {
             <div id={"logo_container"}>
                 <h1 id={"title"}>KRW exchange rate</h1>
             </div>
+            <div>
+                <h2>Check KRW exchange rate easily!</h2>
+            </div>
             <div id={"main_container"}>
                 <div id={"country_container"}>
                     {
