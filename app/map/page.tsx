@@ -2,9 +2,9 @@
 import {useExchangeMarketList} from "@/app/hook/useExchangeMarketList";
 import React, {useEffect} from "react";
 import {Wrapper} from "@googlemaps/react-wrapper/src";
-import GoogleMap from "@/app/component/map";
+import GoogleMap from "@/app/component/googleMap";
 
-export default function ExchangeMap() {
+export default function Map() {
     const [marketList] = useExchangeMarketList();
     console.log(marketList);
     useEffect(() => {

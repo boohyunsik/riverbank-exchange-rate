@@ -5,7 +5,7 @@ import {countries, Country, prices} from "@/app/data/constants";
 import {Flag} from "@/app/component/flag";
 import Script from "next/script";
 
-export default function ExchangeRate() {
+export default function Rate() {
     // true = change foreign currency, false = change krw
     const [inputMode, setInputMode] = useState(true);
     const [inputA, setInputA] = useState(`0`);
