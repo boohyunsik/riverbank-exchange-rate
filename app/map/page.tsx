@@ -46,6 +46,7 @@ export default function Map() {
             <h2>Find KRW exchange market in Korea easily!</h2>
             <div className={"h-4"}/>
             <div id={"map"} className={"w-full h-96"}/>
+            <div>My location</div>
         </div>
     )
 }

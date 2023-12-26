@@ -28,18 +28,25 @@ export default function Home() {
                 <div className="w-full">
                     <img src="card.png" alt="card.png"/>
                 </div>
-                <div className="flex flex-col w-72 sm:w-96 p-8 bg-[#00beca] mb-4 rounded-lg text-white">
-                    <h2 className="text-2xl font-bold mb-3">Online currency exchange</h2>
-                    <p>Don&apos;t wait in line at the currency exchange anymore. Use Riverbank for easy online currency
-                        exchange and make your payment.</p>
+                <div className="w-72 sm:w-96 pr-2 pl-2">
+                    <div className="flex flex-col w-full p-8 bg-[#00beca] mb-4 rounded-lg text-white">
+                        <h2 className="text-2xl font-bold mb-3">Online currency exchange</h2>
+                        <p>Don&apos;t wait in line at the currency exchange anymore. Use Riverbank for easy online
+                            currency
+                            exchange and make your payment.</p>
+                    </div>
                 </div>
-                <div className="flex flex-col w-72 sm:w-96 p-8 bg-[#2295FF] mb-4 rounded-lg text-white">
-                    <h2 className="text-2xl font-bold mb-3">Search Exchange rate easily</h2>
-                    <p>You can search exchange rate in Riverbank!</p>
+                <div className="w-72 sm:w-96 pr-2 pl-2">
+                    <div className="flex flex-col w-full p-8 bg-[#2295FF] mb-4 rounded-lg text-white">
+                        <h2 className="text-2xl font-bold mb-3">Search Exchange rate easily</h2>
+                        <p>You can search exchange rate in Riverbank!</p>
+                    </div>
                 </div>
-                <div className="flex flex-col w-72 sm:w-96 p-8 bg-[#004EE6] mb-4 rounded-lg text-white">
-                    <h2 className="text-2xl font-bold mb-3">Find Exchange market location</h2>
-                    <p>Find exchange market location!</p>
+                <div className="w-72 sm:w-96 pr-2 pl-2">
+                    <div className="flex flex-col w-full p-8 bg-[#004EE6] mb-4 rounded-lg text-white">
+                        <h2 className="text-2xl font-bold mb-3">Find Exchange market location</h2>
+                        <p>Find exchange market location!</p>
+                    </div>
                 </div>
             </div>
         </div>
