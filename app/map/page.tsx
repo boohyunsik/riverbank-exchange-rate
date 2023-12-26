@@ -1,8 +1,6 @@
 "use client";
 import {useExchangeMarketList} from "@/app/hook/useExchangeMarketList";
 import React, {useEffect} from "react";
-import {Wrapper} from "@googlemaps/react-wrapper/src";
-import GoogleMap from "@/app/component/googleMap";
 
 export default function Map() {
     const [marketList] = useExchangeMarketList();
@@ -14,7 +12,7 @@ export default function Map() {
                 document.getElementById('map') as HTMLElement,
                 {
                     zoom: 17,
-                    center: { lat: 37.56674575805664, lng: 126.97835540771484 },
+                    center: {lat: 37.56674575805664, lng: 126.97835540771484},
                 }
             );
             if (marketList.length > 0) {
@@ -43,7 +41,7 @@ export default function Map() {
 
     return (
         <div id={"container"} className={"w-96 h-full"}>
-            <meta name="description" content="Find korean exchange market location." />
+            <meta name="description" content="Find korean exchange market location."/>
             <h1 id={"title"}>KRW exchange market location</h1>
             <h2>Find KRW exchange market in Korea easily!</h2>
             <div className={"h-4"}/>
