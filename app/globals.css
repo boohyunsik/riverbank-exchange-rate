@@ -21,7 +21,7 @@ input[type=number] {
 }
 
 body {
-    height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -31,7 +31,7 @@ body {
 }
 
 #logo_container {
-    width: 100%;
+    width: 280px;
     display: flex;
     flex-direction: row;
     align-items: end;
@@ -43,20 +43,15 @@ body {
 
 #container {
     box-sizing: border-box;
-    flex: 1;
     height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 25px 20px 25px 20px;
+    padding: 25px 10px 25px 10px;
     box-shadow: 0px 0.8398022765904898px 1.1757231872266858px -0.125px rgba(0, 0, 0, 0.02), 0px 1.9904796838090988px 2.7866715573327383px -0.25px rgba(0, 0, 0, 0.02239), 0px 3.6308406896569063px 5.083176965519669px -0.375px rgba(0, 0, 0, 0.02436), 0px 6.036265357761295px 8.450771500865812px -0.5px rgba(0, 0, 0, 0.02724), 0px 9.748076360978303px 13.647306905369623px -0.625px rgba(0, 0, 0, 0.0317), 0px 15.956633803711155px 22.339287325195617px -0.75px rgba(0, 0, 0, 0.03915), 0px 27.476245881684008px 38.46674423435761px -0.875px rgba(0, 0, 0, 0.05297), 0px 50px 70px -1px rgba(0, 0, 0, 0.08);
     background-color: #ffffff;
-    max-width: 380px;
-    max-height: 700px;
-    overflow: hidden;
     align-content: center;
-    flex-wrap: nowrap;
     gap: 0;
     border-radius: 12px;
 }
@@ -77,13 +72,13 @@ body {
 
 #main_container {
     box-sizing: border-box;
-    width: auto;
+    width: 100%;
     height: min-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px 20px 0px 20px;
+    padding: 20px 5px 0px 5px;
     background-color: rgba(255, 255, 255, 0.1);
     overflow: visible;
     align-content: center;
@@ -133,7 +128,7 @@ body {
 
 #exchange_input_container {
     box-sizing: border-box;
-    width: 320px;
+    width: 280px;
     height: 40px;
     display: flex;
     flex-direction: row;
@@ -200,7 +195,7 @@ body {
 }
 
 #price_title {
-    width: 340px;
+    width: 280px;
     height: auto;
     white-space: pre-wrap;
     word-wrap: break-word;

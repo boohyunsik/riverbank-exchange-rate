@@ -26,7 +26,6 @@ export default function Rate() {
     })
 
     const handleInputBChange = ((e: FormEvent<HTMLInputElement>) => {
-        console.log('inputMode: ', inputMode);
         setInputB(e.currentTarget.value);
     })
 
@@ -70,9 +69,9 @@ export default function Rate() {
     }
 
     return (
-        <div id={"container"} className="w-full sm:w-96">
-            <meta name="description" content="Find korean exchange market location." />
-            <meta name="description" content="Find korean exchange rate." />
+        <div id={"container"} className="w-80 sm:w-96 mt-10 flex flex-column justify-center">
+            <meta name="description" content="Find korean exchange market location."/>
+            <meta name="description" content="Find korean exchange rate."/>
             <Script async src="https://www.googletagmanager.com/gtag/js?id=G-QQHRRJX8TE"></Script>
             <Script id="google-analytics">
                 {`
@@ -98,7 +97,7 @@ export default function Rate() {
                                       id={"country_img"}
                                       src={country.img}
                                       name={country.currencyUnit}
-                                      onClick={event => onClickCountry(country)} />
+                                      onClick={event => onClickCountry(country)}/>
                             )
                         })
                     }
@@ -112,7 +111,7 @@ export default function Rate() {
                            onFocus={() => setInputMode(true)}
                            onClick={() => setInputMode(true)}
                            aria-label={"Foreign-Currency"}/>
-                    <div><b>{ selectedCountry.currencyUnit }</b></div>
+                    <div><b>{selectedCountry.currencyUnit}</b></div>
                 </div>
                 <div id={"exchange_input_container"}>
                     <img id={"country_img"} src={"korea.png"} alt={"korea.png"}/>
@@ -120,7 +119,9 @@ export default function Rate() {
                            value={inputMode ? calculateForeignExchangedAmount(inputA, selectedCountry) : inputB}
                            onChange={handleInputBChange}
                            onFocus={() => setInputMode(false)}
-                           onClick={() => {setInputMode(false)}}
+                           onClick={() => {
+                               setInputMode(false)
+                           }}
                            aria-label={"KRW"}/>
                     <div><b>KRW</b></div>
                 </div>
@@ -135,7 +136,8 @@ export default function Rate() {
                 {
                     prices.map((price) => {
                         return (
-                            <div key={price.id} id={"price_component"}>{`${price.icon} ₩ ${price.price.toLocaleString('kr-KR')}`}</div>
+                            <div key={price.id}
+                                 id={"price_component"}>{`${price.icon} ₩ ${price.price.toLocaleString('kr-KR')}`}</div>
                         )
                     })
                 }

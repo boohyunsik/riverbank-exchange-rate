@@ -20,8 +20,8 @@ export default function Home() {
                 `}
             </Script>
             <div
-                className="flex flex-col w-full sm:w-96 items-center pt-20 bg-gradient-to-b from-[#DEFBFF] from-0% via-[#7BDDE3] via-61.46% to-[#1D86DC] to-100%">
-                <div className="flex flex-col mt-20 mb-4">
+                className="flex flex-col w-full sm:w-96 items-center pt-40 bg-gradient-to-b from-[#DEFBFF] from-0% via-[#7BDDE3] via-61.46% to-[#1D86DC] to-100%">
+                <div className="flex flex-col mb-4">
                     <h1 className="text-4xl font-black">Riverbank</h1>
                     <h2 className="font-black">Online KRW exchange</h2>
                 </div>
