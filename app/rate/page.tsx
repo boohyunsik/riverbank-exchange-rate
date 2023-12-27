@@ -64,7 +64,7 @@ export default function Rate() {
             return '0.00';
         }
         const rate = calculateExchangeRate(country);
-        let result = (parseFloat(input) * (1 / parseFloat(rate)));
+        let result = (parseFloat(input) * (1 / parseFloat(rate))) * country.divideUnit;
         return result.toFixed(2);
     }
 
