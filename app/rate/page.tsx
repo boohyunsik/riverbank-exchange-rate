@@ -72,6 +72,7 @@ export default function Rate() {
         <div id={"container"} className="w-80 sm:w-96 mt-10 sm:mt-40 flex flex-column justify-center">
             <meta name="description" content="Find korean exchange market location."/>
             <meta name="description" content="Find korean exchange rate."/>
+            <link rel="canonical" href="https://www.riverbank.world/rate"/>
             <Script async src="https://www.googletagmanager.com/gtag/js?id=G-QQHRRJX8TE"></Script>
             <Script id="google-analytics">
                 {`
