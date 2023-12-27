@@ -31,7 +31,7 @@ export default function RootLayout({
         <meta property="og:locale" content="ja_JP"/>
         <meta property="og:image"
               content="https://riverbank-exchange.s3.ap-northeast-2.amazonaws.com/riverbank_logo_color_og.png"/>
-        <link rel="canonical" href="https://www.riverbank.world"/>
+        {/*<link rel="canonical" href="https://www.riverbank.world"/>*/}
         <script async
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCouOdyOcxG7pH4uuohbjIN6_q5zpaHwlk&callback=console.debug&libraries=maps,marker&v=beta">
         </script>

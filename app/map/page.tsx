@@ -81,7 +81,6 @@ export default function Map() {
     return (
         <div id={"container"} className="w-80 sm:w-96 mt-10 sm:mt-40">
             <meta name="description" content="Find korean exchange market location."/>
-            <link rel="canonical" href="https://www.riverbank.world/map"/>
             <h1 id={"title"}>KRW exchange market location</h1>
             <h2>Find KRW exchange market in Korea!</h2>
             <div className={"h-4"}/>
