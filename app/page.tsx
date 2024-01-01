@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import Script from "next/script";
 import Marquee from "react-fast-marquee";
 import GetYourCard from "@/app/component/getYourCard";
+import Footer from "@/app/component/footer";
 
 export default function Home() {
     const [menu, setMenu] = useState(0);
@@ -12,7 +13,7 @@ export default function Home() {
 
     return (
         <div
-            className="w-full bg-gradient-to-b from-[#DEFBFF] from-0% via-[#7BDDE3] via-61.46% to-[#1D86DC] to-100% pb-20">
+            className="w-full bg-gradient-to-b from-[#DEFBFF] from-0% via-[#7BDDE3] via-61.46% to-[#1D86DC] to-100%">
             <Script async src="https://www.googletagmanager.com/gtag/js?id=G-QQHRRJX8TE"></Script>
             <Script id="google-analytics">
                 {`
@@ -75,7 +76,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="container lg mx-auto flex flex-col items-center">
+            <div className="container lg mx-auto flex flex-col items-center mb-40">
                 <h2 className="text-3xl sm:text-5xl font-black mb-10">Roadmap</h2>
                 <div className="min-w-72 w-full max-w-xl pr-2 pl-2">
                     <div className="flex flex-col w-full p-8 bg-[#2295FF] mb-4 rounded-lg text-white">
@@ -88,6 +89,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }
