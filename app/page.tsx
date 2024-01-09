@@ -103,7 +103,7 @@ export default function Home() {
                         <p className="text-2xl font-black text-white mb-2">How does the Riverbank Prepaid Card Work?</p>
                         <p className="text-lg text-white mb-12">It&apos;s just like a regular debit card. The only
                             difference is that you can load, exchange, and make payments all from the app.</p>
-                        <p className="text-2xl font-black text-white mb-2">How ca I get a Riverbank Prepaid Card?</p>
+                        <p className="text-2xl font-black text-white mb-2">How can I get a Riverbank Prepaid Card?</p>
                         <p className="text-lg text-white mb-12">Sign up for the pre-registration and we would
                             contact you right after release.</p>
                         <p className="text-2xl font-black text-white mb-2">What currencies will I load onto the
