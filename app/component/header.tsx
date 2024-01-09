@@ -11,7 +11,9 @@ export default function Header() {
                     </Link>
                 </div>
                 <div className="flex flex-row">
-                    <Link className="font-black" href="/rate">Exchange Rate</Link>
+                    <Link className="font-black" href="https://blog.riverbank.world" target="_blank">Blog</Link>
+                    <div className="w-4"></div>
+                    <Link className="font-black" href="/rate">Calculator</Link>
                     <div className="w-4"></div>
                     <Link className="font-black" href="/map">Location</Link>
                 </div>
