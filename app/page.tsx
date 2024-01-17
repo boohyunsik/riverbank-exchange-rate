@@ -27,7 +27,19 @@ export default function Home() {
                 className="container lg mx-auto flex flex-col items-center pt-40">
                 <div className="flex flex-col mb-4 text-center">
                     <h1 className="text-4xl sm:text-6xl font-black mb-2">Riverbank</h1>
-                    <h2 className="sm:text-xl font-black">Unlock Seamless Travel in Korea with Prepaid Card</h2>
+                    <h2 className="sm:text-xl font-black">Non-face-to-face KRW exchange</h2>
+                </div>
+                <div className="flex flex-col items-center mb-4 text-center">
+                    <a href="/form">
+                        <button
+                            className="flex flex-row items-center shadow-2xl rounded-lg bg-[#2295FF] hover:bg-[#004EE6] text-white px-4 py-4 text-2xl font-extrabold mx-4">
+                            Apply
+                            uncontact
+                            KRW
+                            exchange NOW!
+                            <img className="ml-2 stroke-white" src="point.svg"/>
+                        </button>
+                    </a>
                 </div>
                 <div className="max-w-5xl">
                     <img className="container md" src="card.png" alt="card.png"/>
