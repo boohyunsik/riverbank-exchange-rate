@@ -31,6 +31,7 @@ export default function Rate() {
 
     const onClickCountry = (country: Country) => {
         setSelectedCountry(country);
+        document.title = `${country.currencyUnit} KRW exchange rate, RiverBank`
     }
 
     const showCurrency = (country: Country) => {
