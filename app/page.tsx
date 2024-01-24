@@ -46,7 +46,7 @@ export default function Home() {
                 </div>
                 <div className="min-w-72 w-full max-w-xl pr-2 pl-2">
                     <div className="flex flex-col w-full p-8 bg-[#00beca] mb-4 rounded-lg text-white">
-                        <h2 className="text-2xl font-bold mb-3">Currency Exchnage</h2>
+                        <h2 className="text-2xl font-bold mb-3">Currency Exchange</h2>
                         <p>Looking for a currency exchange?<br/>Waiting in line at the exchange office?<br/>Spending
                             hours
                             comparing the best exchange rates?<br/><br/>Now you don&apos;t have to. Experience
@@ -67,7 +67,7 @@ export default function Home() {
                 </div>
                 <div className="min-w-72 w-full max-w-xl pr-2 pl-2">
                     <div className="flex flex-col w-full p-8 bg-[#004EE6] mb-4 rounded-lg text-white">
-                        <h2 className="text-2xl font-bold mb-3">Transportation</h2>
+                        <h2 className="text-2xl font-bold mb-3">Transportation and T-money</h2>
                         <p>Enjoy all of South Korea&apos;s mobility with a single card. Buses, subways, and taxis. No
                             need to find a kiosk to top up your transportation card - do it from the comfort of your
                             app. Having trouble booking a train? Riverbank&apos;s AI assistant is here to help.</p>
