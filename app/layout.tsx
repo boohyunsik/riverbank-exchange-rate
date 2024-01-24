@@ -17,8 +17,9 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-        <meta property="og:title" content="Riverbank - KRW Exchange rate & location"/>
-        <meta property="og:description" content="Check KRW exchange rate easily for traveling Korea!"/>
+        <meta property="og:title" content="Riverbank - Korea money exchange"/>
+        <meta property="og:description"
+              content="Non-face-to-face korea money exchange. Pay, use t-money in korea with Riverbank card and save your korea trip budget!"/>
         <meta name="description"
               content="Online KRW exchange. Buy/sell KRW, find exchange rate, and find exchange market location in Korea."/>
         <meta property="og:url" content="https://www.riverbank.world"/>
