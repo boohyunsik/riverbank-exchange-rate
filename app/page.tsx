@@ -30,7 +30,7 @@ export default function Home() {
                     <h2 className="sm:text-xl font-black">Non-face-to-face KRW exchange</h2>
                 </div>
                 <div className="flex flex-col items-center mb-4 text-center">
-                    <a href="https://forms.gle/rPnRVro5cZjFT9Ce8" target="_blank" rel="noreferrer">
+                    <a href="https://exchange.riverbank.world" target="_blank" rel="noreferrer">
                         <button
                             className="flex flex-row items-center shadow-2xl rounded-lg bg-[#2295FF] hover:bg-[#004EE6] text-white px-4 py-4 text-2xl font-extrabold mx-4">
                             Apply
