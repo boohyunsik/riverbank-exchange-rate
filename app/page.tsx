@@ -84,7 +84,7 @@ export default function Home() {
                             <div className="rounded-full bg-[#6c4abc] text-white px-2 mr-2">1</div>
                             <p className="text-[#6c4abc] font-bold">Exchange</p>
                         </div>
-                        <p className="font-bold">Press the currency exchange button.</p>
+                        <p className="font-bold text-lg">Press the currency exchange button.</p>
                     </div>
                     <img src="how_to_use_asset1.png" alt="how_to_use_asset1.png" width={219} height={176}/>
                 </div>
@@ -95,7 +95,7 @@ export default function Home() {
                             <div className="rounded-full bg-[#6c4abc] text-white px-2 mr-2">2</div>
                             <p className="text-[#6c4abc] font-bold">Information</p>
                         </div>
-                        <p className="font-bold">Information required for currency exchange.</p>
+                        <p className="font-bold text-lg">Information required for currency exchange.</p>
                     </div>
                     <img src="how_to_use_asset2.png" alt="how_to_use_asset2.png" width={219} height={176}/>
                 </div>
@@ -106,7 +106,7 @@ export default function Home() {
                             <div className="rounded-full bg-[#6c4abc] text-white px-2 mr-2">3</div>
                             <p className="text-[#6c4abc] font-bold">Waiting for pickup</p>
                         </div>
-                        <p className="font-bold">Please be at the agreed pickup location.</p>
+                        <p className="font-bold text-lg">Please be at the agreed pickup location.</p>
                     </div>
                     <img src="how_to_use_asset3.png" alt="how_to_use_asset3.png" width={219} height={176}/>
                 </div>
@@ -117,7 +117,7 @@ export default function Home() {
                             <div className="rounded-full bg-[#6c4abc] text-white px-2 mr-2">4</div>
                             <p className="text-[#6c4abc] font-bold">Perfect currency exchange</p>
                         </div>
-                        <p className="font-bold">Exchange money safely and quickly</p>
+                        <p className="font-bold text-lg">Exchange money safely and quickly</p>
                     </div>
                     <img src="how_to_use_asset4.png" alt="how_to_use_asset4.png" width={219} height={176}/>
                 </div>
