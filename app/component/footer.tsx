@@ -10,10 +10,10 @@ export default function Footer() {
                          alt={"riverbank_logo_color.png"}/>
                     <p className="w-auto text-xs sm:text-lg text-black">©Copyright 2003 All Right Reserved.</p>
                 </div>
-                <p>사업자 등록번호 : 601-86-03065</p>
-                <p>대표자명 : 성종헌</p>
-                <p>서울특별시 강남구 강남대로112길 47, 2층-에이 1602호(논현동)</p>
-                <p>대표번호 : 010-2003-3870</p>
+                <p>Business registration number : 601-86-03065</p>
+                <p>Representative : Jongheon Sung</p>
+                <p>2F-A 1602Ho, 47, Gangnam-daero 112-gil, Gangnam-gu, Seoul</p>
+                <p>Phone : +82-10-2003-3870</p>
             </div>
         </div>
     )
