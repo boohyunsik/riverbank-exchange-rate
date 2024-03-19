@@ -27,7 +27,7 @@ export default function Home() {
                 className="container lg mx-auto flex flex-col items-center pt-40">
                 <div className="flex flex-col mb-4 text-center">
                     <h1 className="text-4xl sm:text-6xl font-black mb-2">Riverbank</h1>
-                    <h2 className="sm:text-xl font-black">Non-face-to-face KRW exchange</h2>
+                    <h2 className="sm:text-xl font-black">Prepare everything for traveling Korea!</h2>
                 </div>
                 <div className="flex flex-col items-center mb-4 text-center">
                     <a href="https://exchange.riverbank.world" target="_blank" rel="noreferrer">
@@ -57,12 +57,8 @@ export default function Home() {
                 </div>
                 <div className="min-w-72 w-full max-w-xl pr-2 pl-2">
                     <div className="flex flex-col w-full p-8 bg-[#2295FF] mb-4 rounded-lg text-white">
-                        <h2 className="text-2xl font-bold mb-3">Payment Convenience</h2>
-                        <p>Worried that your international payments won&apos;t be authorized?<br/>Worried about not
-                            being
-                            able to make ATM withdrawals?<br/><br/>
-                            Now you don&apos;t have to. The Riverbank Card offers the same level of payment and ATM
-                            withdrawal coverage as a local credit card in South Korea.</p>
+                        <h2 className="text-2xl font-bold mb-3">Prepare E-SIM</h2>
+                        <p>By using an E-SIM, you can access mobile internet in Korea with just a QR scan, without the need to wait at the airport.</p>
                     </div>
                 </div>
                 <div className="min-w-72 w-full max-w-xl pr-2 pl-2">
